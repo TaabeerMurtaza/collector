@@ -21,5 +21,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'developer@mail.com',
             'password' => Hash::make('password'),
         ]);
+        $this->call([
+            DebtSeeder::class,
+        ]);
     }
 }

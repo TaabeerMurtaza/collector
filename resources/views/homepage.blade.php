@@ -53,6 +53,7 @@
                                     <ul id="mainmenu">
                                         <li><a href="{{ url('/') }}">Home</a></li>
                                         <li><a href="#lookupAccount">Sign In</a></li>
+                                        <li><a href="/login">Admin Sign In</a></li>
                                         <li><a href="#section-practice-areas">Practice Areas</a></li>
                                         <!-- <li><a href="#section-contact-us">Contact Us</a></li> -->
                                     </ul>
@@ -72,7 +73,7 @@
             <div class="no-bottom no-top" id="content" style="background-size: cover;">
                 <div id="top" style="background-size: cover;"></div>
                 <section aria-label="section" class="jarallax" style="z-index: 0; background-size: cover;">
-                    
+
                     <div class="container" style="background-size: cover;">
                         <div class="row align-items-center" style="background-size: cover;">
                             <div class="col-lg-5 offset-md-7 wow fadeInRight animated" data-wow-delay=".5s" style="background-size: cover; visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
@@ -86,8 +87,9 @@
                                        legal team is here to help you resolve any obligations and troubles 
                                    that come your way. If we contacted you, please lookup your case below.</p>
                                    <div class="spacer-10" style="background-size: cover;"></div>
-                                   <form action="https://dms.paymentsite.net/search" id="accountLookup" class="" method="get">
-                                    <input type="text" class="form-control mb-3 ph p-3" name="phone_number" placeholder="Enter Your Phone Number Here" maxlength="14">
+                                   <form action="{{ route('case.get') }}" id="accountLookup" class="" method="post">
+                                    @csrf
+                                    <input type="text" class="form-control mb-3 ph p-3" name="number" placeholder="Enter Your Phone Number Here" maxlength="14">
                                     <button type="submit" class="btn btn-lg w-100 py-2 btn-primary">LOOKUP MY CASE</button>
                                     <div style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;" data-lastpass-icon-root=""></div></form>
                                 </div>
