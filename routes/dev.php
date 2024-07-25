@@ -7,3 +7,4 @@ Route::get('reset_everything', function () {
     Artisan::call("migrate:fresh"); 
     Artisan::call("db:seed DatabaseSeeder");
 });
+ 
